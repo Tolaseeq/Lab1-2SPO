@@ -62,45 +62,4 @@ public class Parser {
             System.out.println("PARSING ERROR! CHECK SYNTAX");
         return segment;
     }
-
-    public static double computeTree(Segment tree) {
-        double result = 0;
-        double prev = 0;
-        double next = 0;
-        if (tree.prev != null) {
-            prev = computeTree(tree.prev);
-        } else {
-            result = Double.parseDouble(tree.mainToken.tokenStr);
-        }
-
-        if (tree.next != null) {
-            next = computeTree(tree.next);
-        }
-
-        if (tree.mainToken.tokenName.equals("operator")) {
-            switch (tree.mainToken.tokenStr) {
-                case "+":
-                    result = prev + next;
-                    break;
-                case "-":
-                    if (tree.next != null) {
-                        result = prev - next;
-                    } else {
-                        result = -prev;
-                    }
-                    break;
-                case "*":
-                    result = prev * next;
-                    break;
-                case "/":
-                    result = prev / next;
-                    break;
-                case "^":
-                    result = Math.pow(prev, next);
-                    break;
-            }
-        }
-
-        return result;
-    }
 }
