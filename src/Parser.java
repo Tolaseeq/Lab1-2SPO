@@ -10,7 +10,7 @@ public class Parser {
         return computeETF('E');
     }
 
-    private Segment computeETF(char type) { //для E, T и F
+    private Segment computeETF(char type) { //для E, T, F
         Segment sOne;
         Segment sTwo;
         if (type == 'E') {
@@ -28,7 +28,7 @@ public class Parser {
         return sOne;
     }
 
-    private Segment computeETFop(char type) { //для E', T' и F'
+    private Segment computeETFop(char type) { //для E', T', F'
         Segment segment;
         if (type == 'E' && !(Objects.equals(token.tokenStr, "+") || Objects.equals(token.tokenStr, "-")))
             return null;

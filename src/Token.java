@@ -2,9 +2,9 @@ public class Token {
     public String tokenName;
     public String tokenStr;
 
-    public  Token (String _tokenName, String _tokenStr)
+    public  Token (String name, String string)
     {
-        tokenName = _tokenName;
-        tokenStr = _tokenStr;
+        tokenName = name;
+        tokenStr = string;
     }
 }
